@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/user.png" type="image/x-icon">
+    <title>Sajal Khawas</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="./images/user.png" alt="logo">
+            Sajal<span>Khawas</span>
+        </div>
+        <nav class="navbar noSelect" id="nav">
+            <ul>
+                <li>
+                    <div class="profile-pic" id="profile-pic">
+                        <img src="./images/profile-pic.png" alt="Profile Picture">
+                    </div>
+                </li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="theme" id="theme">
+                        <img src="./images/light.png" alt="Change Theme" class="light">
+                        <img src="./images/dark.png" alt="Change Theme" class="dark hide">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="burger noSelect" id="burger">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+    </header>
+
+    <!-- Home section -->
+    <div class="home" id="home">
+        <div class="identity">
+            <div class="txt1">Hi There...</div>
+            <div class="txt2">I Am <h1>Sajal Khawas</h1>
+            </div>
+            <div class="txt3">And I'm a <span id="profile"></span></div>
+            <div class="btns">
+                <a href="#about"><button class="btn noSelect">About Me</button></a>
+                <a href="#contact"><button class="btn noSelect">Contact Me</button></a>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="./images/home-img-1.png" alt="Sajal Khawas" srcset="">
+        </div>
+    </div>
+
+    <!-- About section -->
+    <div class="about" id="about">
+        <h2 class="aboutMe">About Me</h2>
+        <div class="container">
+            <div class="about-photo">
+                <img src="./images/profile.jpeg" alt="Sajal Khawas Picture" srcset="">
+            </div>
+            <div class="details">
+                <h1>My name is Sajal Khawas and I'm a <span>Programmer</span></h1>
+                <p>I am a 3<sup>rd</sup> year BCA student at Post Graduate Government College, Sector-11, Chandigarh
+                    with excellent academic record and keen interest and practical exposure in the field of information
+                    technology and programming.</p>
+                <div class="box-container">
+                    <div class="box">
+                        <p> <span>Age:&nbsp; </span> 21 </p>
+                        <p> <span>Gender:&nbsp; </span> Male </p>
+                        <p> <span>Language:&nbsp; </span> Hindi, Punjabi, English </p>
+                    </div>
+                    <div class="box">
+                        <p> <span>Phone:&nbsp; </span> +91 76 9637 5537 </p>
+                        <p> <span>Email:&nbsp; </span> khawassajal756@gmail.com </p>
+                        <p> <span>Country:&nbsp; </span> India </p>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a href="./images/SAJAL KHAWAS Latest.pdf" download="SAJAL KHAWAS RESUME"><button class="btn noSelect resumeBtn">Download CV</button></a>
+                    <a href="#contact"><button class="btn noSelect">Contact Me</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills sub-section -->
+        <h2 class="aboutMe">My Skills</h2>
+        <div class="container-2">
+
+        </div>
+    </div>
+
+    <!-- Projects section -->
+    <div class="projects" id="projects">
+        <h2 class="myProjects">My Projects</h2>
+        <div class="container2">
+
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact" id="contact">
+        <h2 class="contactMe">Contact Me</h2>
+        <div class="contact-content">
+            <div class="column left">
+                <h4>Get in Touch</h4>
+                <p>Thank you for taking the time to visit my portfolio website! If you have any questions, comments, or
+                    would like to work together on a project, please don't hesitate to get in touch. I'm always
+                    interested in connecting with other creatives and exploring new opportunities.</p>
+                <div class="box">
+                    <p> <span>Name:&nbsp; </span> Sajal Khawas </p>
+                    <p> <span>Address:&nbsp; </span> SAS Nagar (Mohali), Punjab, India </p>
+                    <p> <span>Email:&nbsp; </span> khawassajal756@gmail.com </p>
+                </div>
+            </div>
+            <div class="column right">
+                <h4>Message me</h4>
+                <form id="contactForm" onsubmit="handleForm()" method="post">
+                    <div class="userContact">
+                        <input type="text" name="name" placeholder="Name" required="">
+                        <input type="email" name="email" placeholder="Email" required="">
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" required="">
+                    <textarea cols="30" rows="10" name="message" placeholder="Message..." required=""></textarea>
+                    <input type="submit" value="Send Message" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="creator">
+            <h3>Created by <br><span>Sajal Khawas</span></h3>
+        </div>
+        <div class="creator1">
+            <h3>Created by <span>Sajal Khawas</span></h3>
+        </div>
+        <div class="copyright"> &copy; Copyright 2023 <br> All rights reserved.</div>
+        <div class="copyright1"> &copy; Copyright 2023 | All rights reserved.</div>
+        <div class="icons">
+            <a href="mailto:khawassajal756@gmail.com"><img src="./images/gmail.png" alt="Gmail" srcset=""></a>
+            <a href="https://www.linkedin.com/in/sajal-khawas-232929215"><img src="./images/linkedin.png" alt="LinkedIn"
+                    srcset=""></a>
+            <a href="https://github.com/Sajal-Khawas8"><img src="./images/github.png" alt="Github" srcset=""></a>
+            <a href="https://instagram.com/sajal_khawas?igshid=MzNlNGNkZWQ4Mg=="><img src="./images/instagram.png"
+                    alt="Instagram" srcset=""></a>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <div class="top"></div>
+        <div class="closeModal">
+            <div class="modalLine" id="modalLine1"></div>
+            <div class="modalLine" id="modalLine2"></div>
+        </div>
+        <div class="main">
+            <div class="downloadResume">
+                <h3>Do you want to download my Resume?</h3>
+            </div>
+            <div class="yesNoBtns">
+                <a href="./images/SAJAL KHAWAS Latest.pdf" download="SAJAL KHAWAS RESUME"><button class="yes">Yes, please</button></a>
+                <button class="no">No, Thanks</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@400;500&family=Ubuntu:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* ::-webkit-scrollbar-track {
+    background: #ff7500;
+    margin: 0px 25vw;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fcf2e8;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+} */
+
+
+body {
+    /* background-color: #fcf2e8; */
+    background-color: #2b2a2a;
+}
+
+/* ----- CSS classes for normal use ----- */
+
+/* For hiding the blue selection which appears on clicking on a button or div */
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.noSelect :focus {
+    outline: none !important;
+}
+
+.hide {
+    display: none;
+}
+
+.light {
+    background-color: #fcf2e8;
+    color: #474242;
+}
+
+/* ----- CSS for Header Section Starts here ----- */
+.header {
+    height: 8vh;
+    width: 100vw;
+    background-color: #1e1e1e;
+    /* position: fixed; */
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    /* transition: all 0.3s ease; */
+}
+
+.logo {
+    height: 70%;
+    margin: auto 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    color: #ff9d3c;
+}
+
+.logo span {
+    color: rgb(235, 226, 226);
+    margin-left: 0.4vw;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+    margin-right: 1vw;
+}
+
+.navbar {
+    margin-right: 18%;
+    height: fit-content;
+    font-size: 1.1em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: auto 10%;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(235, 226, 226);
+    position: relative;
+}
+
+.navbar ul li a:hover {
+    color: #ff9d3c;
+    transition: all 0.3s ease-in-out;
+}
+
+/* For the underline of menus*/
+.navbar ul li a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.3vh;
+    bottom: -1px;
+    left: 0;
+    background-color: #e38528;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar ul li a.lightTheme:after {
+    background-color: #0079ff;
+}
+
+.navbar ul li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+.profile-pic {
+    display: none;
+}
+
+.profile-pic img {
+    height: 6em;
+}
+
+.theme {
+    height: 1.4em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Used to rotate the theme icon */
+.rotate {
+    transform: rotate(360deg);
+    transition: all 0.8s ease;
+}
+
+.theme img {
+    height: 100%;
+}
+
+.burger {
+    width: 35px;
+    position: fixed;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    background-color: rgb(235, 226, 226);
+    transition: all 0.4s ease-in-out;
+}
+
+.line2 {
+    opacity: 0;
+}
+
+.line1 {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.line3 {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1072px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        background-color: #1e1e1e;
+        width: 50vw;
+        height: 100vh;
+        position: fixed;
+        /* -> To hide the nav, Here we didn't used opactiy=0 or display=hide so as to apply the transition*/
+        left: -85%;
+        top: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* font-size: 1.5em; */
+        font-size: 1.3em;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /*Used to display the nav*/
+    .display-nav {
+        left: 0%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin-top: -7vh;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        margin: 10%;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .profile-pic {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        width: 70vw;
+        font-size: 1.3em;
+    }
+
+    .navbar ul {
+        margin-top: -6vh;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .header {
+        height: 10vh;
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size: 1.36em;
+    }
+
+    .navbar {
+        width: 36vw;
+        font-size: 1.22em;
+        top: 10vh;
+    }
+
+    .navbar ul {
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 6.5%;
+    }
+
+    .profile-pic img {
+        height: 3.5em;
+    }
+
+    .burger {
+        width: 26px;
+        top: 4px;
+        right: 20px;
+    }
+}
+
+/* ----- CSS for Home Section starts here ----- */
+
+.home {
+    height: 92vh;
+    width: 100vw;
+    /* background-color: #2b2a2a; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.identity {
+    /* width: 60%; */
+    /* height: 100%; */
+    font-size: 28px;
+    /* padding: 11% 0 0 9%; */
+    /* margin: 11% 0 0 9%; */
+    margin-top: -2vh;
+    /* margin-left: 108px; */
+    font-family: 'Poppins', sans-serif;
+    color: #fcf2e8;
+}
+
+.txt1 {
+    font-size: 1em;
+    /* margin: 1% 0%; */
+    color: #ff7500;
+}
+
+.txt2 {
+    font-size: 2.5em;
+    /* margin: 1% 0%; */
+}
+
+.txt2 h1 {
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ff6800;
+}
+
+.txt3 {
+    font-size: 1.6em;
+    margin: 1% 0%;
+}
+
+.txt3 span {
+    color: #ff8000;
+}
+
+.btns {
+    margin-top: 2vh;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ff9a34e6;
+    color: #fcf2e8;
+    border: 2.5px solid #ff6800;
+    border-radius: 12px;
+    margin-right: 1vw;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+    color: #ff6800;
+}
+
+.photo {
+    height: 85vh;
+    margin-left: -10vw
+}
+
+/* .photo img{
+    width: 35vw;
+} */
+
+.photo img {
+    height: 100%;
+    /* height: 40vw; */
+    /* width: 28vw; */
+    /* margin-top: -15px; */
+    /* margin-left: -14vw; */
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1072px) {
+    .identity {
+        margin-top: -15vh;
+    }
+
+    .txt1 {
+        font-size: 0.8em;
+        margin: 5% 0%;
+    }
+
+    .txt2 {
+        font-size: 1.5em;
+        margin: 5% 0%;
+    }
+
+    .txt2 h1 {
+        display: block;
+        font-size: 1.2em;
+        margin: 5% 0%;
+    }
+
+    .txt3 {
+        font-size: 1.2em;
+        margin: 5% 0%;
+    }
+
+    .btn {
+        width: 135px;
+        height: 48px;
+        font-size: 0.8em;
+    }
+
+    .photo img {
+        height: 82vh;
+        margin-left: -11vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .home {
+        background: url("../images/home-img-1.png");
+        /* background-color: #2b2a2a; */
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        justify-content: left;
+        padding-left: 10%;
+    }
+
+    /* .identity{
+        justify-content: left;
+        padding-left: 10%;
+    } */
+
+    .photo {
+        margin: 0;
+    }
+
+    .photo img {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home {
+        background: url("../images/home-img-2.png");
+        /* background-color: #2b2a2a; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        justify-content: center;
+        /* opacity: 0.8; */
+    }
+
+    .identity {
+        margin-top: -12vh;
+    }
+
+    .txt1 {
+        margin: 10% 0%;
+    }
+
+    .txt2 {
+        margin: 10% 0%;
+    }
+
+    .txt2 h1 {
+        margin: 0;
+    }
+
+    .txt3 {
+        margin: 10% 0%;
+    }
+
+    .btns {
+        margin-top: 7vh;
+    }
+
+    .btn {
+        width: 140px;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .home {
+        height: 90vh;
+        background-position: 75%;
+        background-size: 38vh;
+        padding-left: 20%;
+    }
+
+    .identity {
+        margin-top: -6vh;
+    }
+
+    .txt1 {
+        font-size: 0.7em;
+    }
+
+    .txt2 {
+        font-size: 1.2em;
+    }
+
+    .txt2 h1 {
+        margin: 0;
+    }
+
+    .txt3 {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 116px;
+        height: 42px;
+        font-size: 0.6em;
+        border: 2px solid #ff6800;
+        border-radius: 8px;
+    }
+}
+
+/* ----- CSS for About Section starts here ----- */
+.about {
+    /* height: 92vh; */
+    width: 100vw;
+    /* background-color: #2b2a2a; */
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aboutMe {
+    text-align: center;
+    color: #fcf2e8;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6em;
+}
+
+.container {
+    width: 100%;
+    /* height: 58%; */
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: #ff7500; */
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.about-photo {
+    width: 350px;
+    /* width: 55%; */
+    height: 350px;
+    background-color: #fcf2e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+
+.about-photo img {
+    width: 98%;
+    height: 98%;
+}
+
+.details {
+    height: 100%;
+    width: 63%;
+    margin: 10px;
+    /* background-color: greenyellow; */
+    color: #fcf2e8;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.details h1 {
+    font-size: 1.5em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    /* color: #fcf2e8; */
+}
+
+.details h1 span {
+    color: #ff6800;
+}
+
+.details p {
+    margin-top: 12px;
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.box p {
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.box p span {
+    color: #ff6800;
+}
+
+.details .btns {
+    margin: 12px 0;
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1072px) {
+    .details {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .details {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-photo {
+        width: 250px;
+        height: 240px;
+    }
+
+    .details {
+        font-size: 20px;
+    }
+}
+
+/* ----- CSS for Skills sub-section starts here ----- */
+.container-2 {
+    /* width: 79%; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    /* background-color: aqua; */
+    justify-content: center;
+
+}
+
+.card {
+    width: 14%;
+    height: 50px;
+    margin: 24px;
+    background-color: #ff9a34e6;
+    border: 2.5px solid #ff6800;
+    border-radius: 16px;
+    color: #fcf2e8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1072px) {
+    .card {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .card {
+        width: 14%;
+        font-size: 75%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card {
+        width: 24%;
+        /* font-size: 70%; */
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .card {
+        width: 35%;
+        /* font-size: 75%; */
+    }
+}
+
+/* ----- CSS for Projects Section starts here ----- */
+.projects {
+    /* height: 92vh; */
+    width: 100vw;
+    /* background-color: #2b2a2a; */
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.myProjects {
+    text-align: center;
+    color: #fcf2e8;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6em;
+}
+
+.container2 {
+    /* background-color: aquamarine; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+    overflow-x: auto;
+}
+
+.projectCard {
+    min-width: 460px;
+    height: 393px;
+    background-color: #ff9a34e6;
+    border: 2.5px solid #ff6800;
+    color: #fcf2e8;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* cursor: pointer; */
+    font-size: 18px;
+}
+
+/* .projectCard:hover {
+    transform: scale(1.05);
+} */
+
+.project {
+    width: 100%;
+    height: 80%;
+    /* display: flex; */
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+}
+
+.projectBtns {
+    /* width: 5vw; */
+    /* height: 0; */
+    height: 21%;
+    width: 65px;
+    margin-left: 10px;
+    display: none;
+}
+
+.projectBtns img {
+    width: 100% !important;
+}
+
+.projectBtns img:hover {
+    cursor: pointer;
+    transform: scale(1.087);
+}
+
+.projectCard:hover .project {
+    display: flex;
+}
+
+.projectCard:hover .project img {
+    width: 85%;
+    transition: all 0.3s ease-in-out;
+}
+
+.projectCard:hover .projectBtns {
+    display: block;
+    /* height: 21%; */
+    /* width: 65px; */
+}
+
+.title {
+    font-size: 1.2em;
+    text-align: center;
+    margin: auto;
+}
+
+.projectCard P {
+    text-align: center;
+    margin: auto;
+    font-size: 1em;
+}
+
+
+
+@media screen and (max-width: 1072px) {
+    .projectCard {
+        min-width: 400px;
+    }
+
+    .title {
+        font-size: 1.1em;
+    }
+
+    .projectCard P {
+        font-size: 0.9em;
+    }
+
+    .projectCard:hover .project img {
+        width: 83%;
+    }
+
+    .projectBtns {
+        height: 19%;
+    }
+
+    .projectCard:hover .projectBtns {
+        width: 56px;
+    }
+
+}
+
+@media screen and (max-width: 865px) {
+    .projectCard {
+        min-width: 340px;
+    }
+
+    .title {
+        font-size: 1em;
+    }
+
+    .projectCard P {
+        font-size: 0.8em;
+    }
+
+    .projectCard:hover .project img {
+        width: 81%;
+    }
+
+    .projectBtns {
+        height: 18%;
+    }
+
+    .projectCard:hover .projectBtns {
+        width: 54px;
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .projectCard {
+        min-width: 300px;
+        height: 340px;
+    }
+
+    .title {
+        font-size: 0.9em;
+    }
+
+    .projectCard P {
+        font-size: 0.7em;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .projectCard {
+        min-width: 280px;
+        height: 270px;
+    }
+
+    .title {
+        font-size: 0.8em;
+    }
+
+    .projectCard P {
+        font-size: 0.6em;
+    }
+
+    .projectBtns {
+        height: 20%;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+    /* .projectCard{
+        height: 40vh;
+        width: 90%;
+    } */
+}
+
+/* ----- CSS for Contact Section starts here ----- */
+.contact {
+    width: 100vw;
+    /* background-color: #2b2a2a; */
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+}
+
+.contactMe {
+    text-align: center;
+    color: #fcf2e8;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6em;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: yellowgreen; */
+    color: #fcf2e8;
+}
+
+.column {
+    font-size: 26px;
+}
+
+.left {
+    width: 55%;
+}
+
+.column h4 {
+    /* text-align: center; */
+    font-size: 1em;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 25px 0;
+}
+
+.column p {
+    text-align: justify;
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+    margin: 15px 0;
+}
+
+.box2 {
+    max-width: 50%;
+}
+
+
+.right form {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.right form input {
+    margin-top: 10px;
+    /* width: 49%; */
+    height: 6vh;
+    border: 2px solid #fcf2e8;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fcf2e8;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.right form textarea {
+    margin-top: 10px;
+    /* width: 100%; */
+    height: 20vh;
+    border: 2px solid #fcf2e8;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fcf2e8;
+    font-size: 1em;
+    padding: 10px;
+    resize: none;
+}
+
+.z-effect {
+    z-index: -1;
+}
+
+.userContact {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userContact input {
+    width: 49%;
+}
+
+#submit {
+    width: 180px;
+    height: 6vh;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ff9a34e6;
+    color: #fcf2e8;
+    border: 2.5px solid #ff6800;
+    border-radius: 12px;
+    padding: 0;
+    margin: 15px auto;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: transparent;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+    color: #ff6800;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fcf2e8;
+    opacity: 0.8;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fcf2e8;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fcf2e8;
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1200px) {
+    .left {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1072px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 80%;
+    }
+
+    .right {
+        width: 80%;
+    }
+
+    .column p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .userContact {
+        flex-direction: column;
+    }
+
+    .userContact input {
+        width: 100%;
+    }
+
+    .column p {
+        font-size: 0.7em;
+    }
+}
+
+/* ----- CSS for Footer Section starts here ----- */
+footer {
+    background-color: #1e1e1e;
+    width: 100vw;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #fcf2e8;
+}
+
+.creator h3,
+.creator1 h3 {
+    font-size: 1em;
+    font-weight: inherit;
+    text-align: center;
+}
+
+.creator h3 span,
+.creator1 h3 span {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ff6800;
+    font-size: 1.1em;
+}
+
+.creator1 {
+    display: none;
+}
+
+.copyright,
+.copyright1 {
+    font-size: 1em;
+    margin-right: 8.5%;
+    text-align: center;
+}
+
+.copyright1 {
+    display: none;
+}
+
+.icons {
+    /* height: 30px; */
+    width: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.icons a {
+    display: inline-flex;
+}
+
+.icons img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+.icons img:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: all 0.3s ease;
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1072px) {
+    footer {
+        /* flex-direction: column; */
+        font-size: 22px;
+        gap: 10px;
+    }
+
+    .creator h3 {
+        margin-top: 10px;
+    }
+
+    .icons {
+        justify-content: center;
+        /* margin-bottom: 10px; */
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .icons {
+        margin-right: 28px;
+    }
+
+    .icons img {
+        margin: 0 8px;
+    }
+}
+
+/* @media screen and (max-width: 785px) {
+    .icons img {
+        margin: 0 3px;
+    }
+} */
+
+@media screen and (max-width: 680px) {
+    .footer {
+        font-size: 20px;
+        flex-direction: column;
+    }
+
+    .creator {
+        display: none;
+    }
+
+    .creator1 {
+        display: block;
+    }
+
+    .copyright {
+        display: none;
+    }
+
+    .copyright1 {
+        display: block;
+        margin: 0;
+    }
+
+    .icons {
+        margin-bottom: 8px;
+    }
+
+    .icons img {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer {
+        font-size: 18px;
+    }
+}
+
+
+/* ----- CSS for Modal box starts here ----- */
+.modal {
+    width: 40vw;
+    height: 40vh;
+    background-color: #fcf2e8;
+    color: #222;
+    position: fixed;
+    top: 30vh;
+    left: 30vw;
+    display: none;
+}
+
+.top {
+    height: 15%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.closeModal {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 31.6vh;
+    right: 31vw;
+    /* background-color: #0079ff; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modalLine {
+    width: 100%;
+    height: 3px;
+    background-color: #1e1e1e;
+}
+
+#modalLine1 {
+    transform: translateY(8.5px) rotate(45deg)
+}
+
+#modalLine2 {
+    transform: translateY(-8.5px) rotate(-45deg)
+}
+
+.main {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.downloadResume {
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.yes,
+.no {
+    width: 180px;
+    height: 50px;
+    font-size: 1.5em;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fcf2e8;
+    border-radius: 12px;
+    margin-right: 1vw;
+}
+
+.yes {
+    background-color: #0acc00e6;
+    border: 2.5px solid #347a02;
+}
+
+.no {
+    background-color: #fe0000e6;
+    border: 2.5px solid #b50404;
+}
+
+.yes:hover,
+.no:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* ----- Responsive Designing ----- */
+@media screen and (max-width: 1024px) {
+    .downloadResume {
+        font-size: 22px;
+    }
+
+    .yes,
+    .no {
+        width: 145px;
+        height: 47px;
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .modal {
+        width: 56vw;
+        left: 22vw;
+    }
+    
+    .closeModal {
+        right: 23vw;
+    }
+
+    .downloadResume {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .modal {
+        width: 70vw;
+        left: 15vw;
+    }
+
+    .closeModal {
+        right: 17vw;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .modal {
+        width: 86vw;
+        left: 7vw;
+    }
+
+    .closeModal {
+        right: 8vw;
+    }
+
+    .downloadResume {
+        font-size: 18px;
+    }
+
+    .yes, .no {
+        width: 130px;
+        height: 45px;
+        font-size: 1.25em;
+    }
+}
+
+
+.typed-cursor{
+    color: #000;
+}
