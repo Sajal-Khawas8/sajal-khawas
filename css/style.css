@@ -151,7 +151,7 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-.navbar ul li a .lightTheme:after {
+.navbar ul li a.lightTheme:after {
     background-color: #0079ff;
 }
 

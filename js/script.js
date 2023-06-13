@@ -10,14 +10,14 @@ let dark = document.querySelector(".dark");
 let modalShown = false;
 
 var typed = new Typed('#profile1', {
-    strings: ['Software Engineer', 'Web Developer', 'Programmer', 'Coder'],
+    strings: ['Web Developer', 'Programmer', 'Coder'],
     typeSpeed: 50,
     backSpeed: 50,
     loop: true,
 });
 
 var typed = new Typed('#profile2', {
-    strings: ['Software Engineer', 'Web Developer', 'Programmer', 'Coder'],
+    strings: ['Web Developer', 'Programmer', 'Coder'],
     typeSpeed: 50,
     backSpeed: 50,
     loop: true,
@@ -432,51 +432,6 @@ const changeThemeBasedOnTime = () => {
     }
 }
 
-// const scrollProjectCards = () => {
-//     var container = document.querySelector(".container2");
-//     var scrollInterval;
-
-//     const startScroll=()=>{
-//         scrollInterval = setInterval(() => {
-//             container.scrollLeft++;
-//             if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-//                 container.scrollLeft = 0;
-//             }
-//         }, 6);
-//     }
-
-//     const stopScroll=()=>{
-//         clearInterval(scrollInterval);
-//     }
-
-//     Array.from(document.getElementsByTagName("a")).forEach(element => {
-//         element.addEventListener("click", () => {
-//             stopScroll();
-//             let scrollTimeout;
-//             document.addEventListener("scroll", () => {
-//                 clearTimeout(scrollTimeout);
-//                 scrollTimeout = setTimeout(() => {
-//                     console.log("Vertical scrolling finished!");
-//                     startScroll();
-//                 }, 200);
-//             });
-//         })
-//     });
-
-
-//     document.querySelectorAll(".projectCard").forEach(element => {
-//         element.addEventListener("mouseenter", () => {
-//             stopScroll();
-//         });
-
-//         element.addEventListener("mouseleave", () => {
-//             startScroll();
-//         });
-//     });
-
-//     startScroll();
-// }
-
 const scrollProjectCards = () => {
     const container = document.querySelector(".container2");
     let scrollInterval;
@@ -519,7 +474,6 @@ const scrollProjectCards = () => {
 
     startScroll();
 };
-
 
 document.addEventListener("mouseout", (e) => {
     if (!e.toElement && !e.relatedTarget && !modalShown) {
