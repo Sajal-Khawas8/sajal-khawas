@@ -66,10 +66,10 @@ body {
     display: none;
 }
 
-.light {
+/* .light {
     background-color: #fcf2e8;
     color: #474242;
-}
+} */
 
 /* ----- CSS for Header Section Starts here ----- */
 .header {
@@ -151,7 +151,7 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-.navbar ul li a.lightTheme:after {
+.navbar ul li a .lightTheme:after {
     background-color: #0079ff;
 }
 
@@ -165,7 +165,9 @@ body {
 }
 
 .profile-pic img {
-    height: 6em;
+    height: 5em;
+    border: 3px solid #1e1e1e;
+    border-radius: 50%;
 }
 
 .theme {
@@ -352,12 +354,16 @@ body {
 }
 
 .txt3 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin: 1% 0%;
 }
 
 .txt3 span {
     color: #ff8000;
+}
+
+#break {
+    display: none;
 }
 
 .btns {
@@ -386,7 +392,8 @@ body {
 
 .photo {
     height: 85vh;
-    margin-left: -10vw
+    margin-left: -10vw;
+    z-index: -1;
 }
 
 /* .photo img{
@@ -403,9 +410,9 @@ body {
 
 /* ----- Responsive Designing ----- */
 @media screen and (max-width: 1072px) {
-    .identity {
+    /* .identity {
         margin-top: -15vh;
-    }
+    } */
 
     .txt1 {
         font-size: 0.8em;
@@ -426,12 +433,17 @@ body {
     .txt3 {
         font-size: 1.2em;
         margin: 5% 0%;
+        width: 64vw;
     }
 
     .btn {
         width: 135px;
         height: 48px;
         font-size: 0.8em;
+    }
+
+    .photo {
+        margin-left: -40vw;
     }
 
     .photo img {
@@ -462,6 +474,17 @@ body {
 
     .photo img {
         width: 0;
+    }
+
+    .txt3 {
+        font-size: 1.1em;
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #break {
+        display: block;
     }
 }
 
@@ -494,6 +517,7 @@ body {
 
     .txt3 {
         margin: 10% 0%;
+        width: fit-content;
     }
 
     .btns {
@@ -1333,9 +1357,9 @@ footer {
         width: 56vw;
         left: 22vw;
     }
-    
+
     .closeModal {
-        right: 23vw;
+        right: 24vw;
     }
 
     .downloadResume {
@@ -1368,14 +1392,10 @@ footer {
         font-size: 18px;
     }
 
-    .yes, .no {
+    .yes,
+    .no {
         width: 130px;
         height: 45px;
         font-size: 1.25em;
     }
-}
-
-
-.typed-cursor{
-    color: #000;
 }

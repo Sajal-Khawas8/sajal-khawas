@@ -1,5 +1,6 @@
 let burger = document.getElementById("burger");
 let nav = document.getElementById("nav");
+let navOpened = false;
 let line1 = document.getElementById("line1");
 let line2 = document.getElementById("line2");
 let line3 = document.getElementById("line3");
@@ -8,7 +9,14 @@ let light = document.querySelector(".light");
 let dark = document.querySelector(".dark");
 let modalShown = false;
 
-var typed = new Typed('#profile', {
+var typed = new Typed('#profile1', {
+    strings: ['Software Engineer', 'Web Developer', 'Programmer', 'Coder'],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true,
+});
+
+var typed = new Typed('#profile2', {
     strings: ['Software Engineer', 'Web Developer', 'Programmer', 'Coder'],
     typeSpeed: 50,
     backSpeed: 50,
@@ -59,6 +67,7 @@ const changeToLight = () => {
     });
     document.querySelector(".details").style.color = "#333"
     document.querySelector(".details h1 span").style.color = "#0a6ed0"
+    document.querySelector(".details h1 .typed-cursor").style.color = "#0a6ed0"
     document.querySelectorAll(".box p span").forEach(element => {
         element.style.color = "#0a6ed0"
     });
@@ -168,6 +177,7 @@ const changeToDark = () => {
     });
     document.querySelector(".details").style.color = "#fcf2e8"
     document.querySelector(".details h1 span").style.color = "#ff6800"
+    document.querySelector(".details h1 .typed-cursor").style.color = "#ff8000"
     document.querySelectorAll(".box p span").forEach(element => {
         element.style.color = "#ff6800"
     });
@@ -323,6 +333,7 @@ const generateSkillCards = () => {
 
 burger.addEventListener("click", () => {
     // profilePic.classList.toggle("hide");
+    navOpened = !navOpened;
     nav.classList.toggle("display-nav");
     line1.classList.toggle("line1");
     line2.classList.toggle("line2");
@@ -333,6 +344,22 @@ burger.addEventListener("click", () => {
         });
         document.querySelector(".right form textarea").classList.toggle("z-effect");
     }, 50);
+})
+
+document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target) && !burger.contains(e.target) && navOpened) {
+        navOpened = !navOpened;
+        nav.classList.toggle("display-nav");
+        line1.classList.toggle("line1");
+        line2.classList.toggle("line2");
+        line3.classList.toggle("line3");
+        setTimeout(() => {
+            document.querySelectorAll(".right form input").forEach(element => {
+                element.classList.toggle("z-effect");
+            });
+            document.querySelector(".right form textarea").classList.toggle("z-effect");
+        }, 50);
+    }
 })
 
 theme.addEventListener("click", () => {
@@ -398,39 +425,100 @@ document.getElementById("contactForm").addEventListener("submit", (event) => {
 });
 
 const changeThemeBasedOnTime = () => {
-    if (new Date().getHours >= 6 && new Date().getHours < 18) {
+    if (new Date().getHours() >= 6 && new Date().getHours() < 18) {
         changeToLight();
     } else {
         changeToDark();
     }
 }
 
+// const scrollProjectCards = () => {
+//     var container = document.querySelector(".container2");
+//     var scrollInterval;
+
+//     const startScroll=()=>{
+//         scrollInterval = setInterval(() => {
+//             container.scrollLeft++;
+//             if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+//                 container.scrollLeft = 0;
+//             }
+//         }, 6);
+//     }
+
+//     const stopScroll=()=>{
+//         clearInterval(scrollInterval);
+//     }
+
+//     Array.from(document.getElementsByTagName("a")).forEach(element => {
+//         element.addEventListener("click", () => {
+//             stopScroll();
+//             let scrollTimeout;
+//             document.addEventListener("scroll", () => {
+//                 clearTimeout(scrollTimeout);
+//                 scrollTimeout = setTimeout(() => {
+//                     console.log("Vertical scrolling finished!");
+//                     startScroll();
+//                 }, 200);
+//             });
+//         })
+//     });
+
+
+//     document.querySelectorAll(".projectCard").forEach(element => {
+//         element.addEventListener("mouseenter", () => {
+//             stopScroll();
+//         });
+
+//         element.addEventListener("mouseleave", () => {
+//             startScroll();
+//         });
+//     });
+
+//     startScroll();
+// }
+
 const scrollProjectCards = () => {
-    var container = document.querySelector(".container2");
-    var scrollInterval = setInterval(() => {
-        container.scrollLeft++;
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-            container.scrollLeft = 0;
-        }
-    }, 6);
+    const container = document.querySelector(".container2");
+    let scrollInterval;
+    let isScrolling = false;
 
-    document.querySelectorAll(".projectCard").forEach(element => {
-        element.addEventListener("mouseenter", () => {
-            clearInterval(scrollInterval);
-        });
-    });
-
-    document.querySelectorAll(".projectCard").forEach(element => {
-        element.addEventListener("mouseleave", () => {
+    const startScroll = () => {
+        if (!isScrolling) {
             scrollInterval = setInterval(() => {
                 container.scrollLeft++;
                 if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
                     container.scrollLeft = 0;
                 }
             }, 6);
+            isScrolling = true;
+        }
+    };
+
+    const stopScroll = () => {
+        clearInterval(scrollInterval);
+        isScrolling = false;
+    };
+
+    document.querySelectorAll("a").forEach(element => {
+        element.addEventListener("click", () => {
+            stopScroll();
+            let scrollTimeout;
+            document.addEventListener("scroll", () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    startScroll();
+                }, 200);
+            });
         });
     });
-}
+
+    document.querySelectorAll(".projectCard").forEach(element => {
+        element.addEventListener("mouseenter", stopScroll);
+        element.addEventListener("mouseleave", startScroll);
+    });
+
+    startScroll();
+};
 
 
 document.addEventListener("mouseout", (e) => {
