@@ -24,7 +24,8 @@ var typed = new Typed('#profile2', {
 });
 
 const changeToLight = () => {
-    document.getElementsByTagName("body").item(0).style.backgroundColor = "#fcf2e8"
+    // document.getElementsByTagName("body").item(0).style.backgroundColor = "#fcf2e8"
+    document.getElementsByTagName("body").item(0).style.backgroundColor = "#fefae0"
     document.querySelector(".header").style.backgroundColor = "#fff"
     document.querySelector(".logo").style.color = "#0081ff"
     document.querySelector(".logo span").style.color = "#333"
@@ -235,7 +236,7 @@ const changeToDark = () => {
     document.querySelector(".footer").style.backgroundColor = "#1e1e1e"
     document.querySelector(".footer").style.color = "#fcf2e8"
     document.querySelector(".creator h3 span").style.color = "#ff6800";
-    document.querySelector(".modal").style.backgroundColor = "#fcf2e8";
+    document.querySelector(".modal").style.backgroundColor = "#fefae0";
     document.querySelector(".modal").style.color = "#222"
     document.querySelector(".top").style.backgroundColor = "#fff";
     document.querySelectorAll(".modalLine").forEach(element => {

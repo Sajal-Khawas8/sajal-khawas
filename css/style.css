@@ -325,13 +325,14 @@ body {
 .identity {
     /* width: 60%; */
     /* height: 100%; */
-    font-size: 28px;
+    font-size: 26px;
     /* padding: 11% 0 0 9%; */
     /* margin: 11% 0 0 9%; */
     margin-top: -2vh;
     /* margin-left: 108px; */
     font-family: 'Poppins', sans-serif;
     color: #fcf2e8;
+    font-weight: 425;
 }
 
 .txt1 {
@@ -437,7 +438,7 @@ body {
     }
 
     .btn {
-        width: 135px;
+        width: 155px;
         height: 48px;
         font-size: 0.8em;
     }
@@ -490,18 +491,19 @@ body {
 
 @media screen and (max-width: 480px) {
     .home {
-        background: url("../images/home-img-2.png");
+        background: url("");
         /* background-color: #2b2a2a; */
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         justify-content: center;
+        padding-left: 0;
         /* opacity: 0.8; */
     }
 
-    .identity {
+    /* .identity {
         margin-top: -12vh;
-    }
+    } */
 
     .txt1 {
         margin: 10% 0%;
@@ -580,6 +582,8 @@ body {
     color: #fcf2e8;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.6em;
+    margin: 22px auto;
+    margin-top: 30px;
 }
 
 .container {
@@ -626,6 +630,7 @@ body {
     font-size: 1.5em;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    line-height: 1.4;
     /* color: #fcf2e8; */
 }
 
@@ -757,6 +762,7 @@ body {
     color: #fcf2e8;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.6em;
+    margin: 22px auto;
 }
 
 .container2 {
@@ -953,6 +959,7 @@ body {
     color: #fcf2e8;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.6em;
+    margin: 22px auto;
 }
 
 .contact-content {
@@ -1398,4 +1405,9 @@ footer {
         height: 45px;
         font-size: 1.25em;
     }
+}
+
+.txt3 .typed-cursor, .details h1 .typed-cursor{
+    position: absolute;
+    z-index: -1;
 }
