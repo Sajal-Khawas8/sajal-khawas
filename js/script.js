@@ -251,7 +251,7 @@ let projects = [
         image: "../images/GuessTheNumber.png",
         title: "Guess The Number Game",
         languages: ["HTML", "CSS", "JavaScript"],
-        viewLink: "https://sajal-khawas8.github.io/GuessTheNumber/",
+        viewLink: "https://sajal-khawas8.github.io/GuessTheNumber",
         sourceCodeLink: "https://github.com/Sajal-Khawas8/GuessTheNumber",
         downloadLink: "https://github.com/sajal-khawas8/GuessTheNumber/archive/main.zip"
     },
@@ -259,7 +259,7 @@ let projects = [
         image: "../images/WeatherApp.png",
         title: "Weather App",
         languages: ["HTML", "Bootstrap", "JavaScript"],
-        viewLink: "https://sajal-khawas8.github.io/MyCityWeather/",
+        viewLink: "https://sajal-khawas8.github.io/MyCityWeather",
         sourceCodeLink: "https://github.com/Sajal-Khawas8/MyCityWeather",
         downloadLink: "https://github.com/sajal-khawas8/MyCityWeather/archive/main.zip"
     },
@@ -267,7 +267,7 @@ let projects = [
         image: "../images/MusicPlayer.png",
         title: "Music Player",
         languages: ["HTML", "CSS", "JavaScript"],
-        viewLink: "https://sajal-khawas8.github.io/MyTunes/",
+        viewLink: "https://sajal-khawas8.github.io/MyTunes",
         sourceCodeLink: "https://github.com/Sajal-Khawas8/MyTunes",
         downloadLink: "https://github.com/sajal-khawas8/MyTunes/archive/main.zip"
     },
@@ -283,8 +283,8 @@ let projects = [
         image: "../images/Portfolio.png",
         title: "Personal Portfolio Website",
         languages: ["HTML", "CSS", "JavaScript"],
-        viewLink: "https://sajal-khawas8.github.io/Portfolio-SajalKhawas/",
-        sourceCodeLink: "https://github.com/Sajal-Khawas8/Portfolio-SajalKhawas",
+        viewLink: "https://sajal-khawas.vercel.app",
+        sourceCodeLink: "https://github.com/Sajal-Khawas8/sajal-khawas",
         downloadLink: "https://github.com/sajal-khawas8/Portfolio-SajalKhawas/archive/main.zip"
     },
     {
