@@ -504,9 +504,11 @@ document.querySelector(".yes").addEventListener("click", () => {
 
 const run = () => {
     changeThemeBasedOnTime();
+    generateSkillCards();
     generateProjectCards();
     scrollProjectCards();
-    generateSkillCards();
+    document.querySelector(".copyright span").innerHTML = new Date().getFullYear();
+    document.querySelector(".copyright1 span").innerHTML = new Date().getFullYear();
     setTimeout(() => {
         if (!modalShown) {
             document.querySelector(".modal").style.display = "block";

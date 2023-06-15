@@ -1407,7 +1407,8 @@ footer {
     }
 }
 
-.txt3 .typed-cursor, .details h1 .typed-cursor{
+.txt3 .typed-cursor,
+.details h1 .typed-cursor {
     position: absolute;
     z-index: -1;
 }
