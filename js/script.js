@@ -126,6 +126,7 @@ const changeToLight = () => {
     document.querySelector(".footer").style.backgroundColor = "#fff"
     document.querySelector(".footer").style.color = "#333"
     document.querySelector(".creator h3 span").style.color = "#0081ff";
+    document.querySelector(".creator1 h3 span").style.color = "#0081ff";
     document.querySelector(".modal").style.backgroundColor = "#2b2a2a";
     document.querySelector(".modal").style.color = "#fcf2e8"
     document.querySelector(".top").style.backgroundColor = "#1e1e1e";
@@ -236,6 +237,7 @@ const changeToDark = () => {
     document.querySelector(".footer").style.backgroundColor = "#1e1e1e"
     document.querySelector(".footer").style.color = "#fcf2e8"
     document.querySelector(".creator h3 span").style.color = "#ff6800";
+    document.querySelector(".creator1 h3 span").style.color = "#ff6800";
     document.querySelector(".modal").style.backgroundColor = "#fefae0";
     document.querySelector(".modal").style.color = "#222"
     document.querySelector(".top").style.backgroundColor = "#fff";
